@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "edu.uw.intentdemo"
+        applicationId "edu.uw.accessdemo"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1

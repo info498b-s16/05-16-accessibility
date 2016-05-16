@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.uw.intentdemo">
+    package="edu.uw.accessdemo">
 
     <uses-permission android:name="android.permission.SEND_SMS" />
 
@@ -10,38 +10,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="edu.uw.accessdemo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" android:parentActivityName="edu.uw.intentdemo.MainActivity">
-            <!-- for action bar back -->
+        <activity android:name="edu.uw.accessdemo.SecondActivity" android:parentActivityName="edu.uw.accessdemo.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edu.uw.intentdemo.MainActivity" />
-
-            <!-- respond to dial intents! -->
-            <intent-filter>
-                <action android:name="android.intent.action.DIAL"/>
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="tel" />
-            </intent-filter>
+                android:value="edu.uw.accessdemo.MainActivity" />
         </activity>
 
-        <!-- listen for battery events -->
-        <receiver android:name=".MyReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-                <action android:name="android.intent.action.BATTERY_CHANGED" />
-                <action android:name="android.intent.action.BATTERY_OKAY" />
-                <action android:name="edu.uw.intentdemo.ACTION_SMS_STATUS" />
-                <!-- no category because not for an activity! -->
-            </intent-filter>
-        </receiver>
+
 
     </application>
 
